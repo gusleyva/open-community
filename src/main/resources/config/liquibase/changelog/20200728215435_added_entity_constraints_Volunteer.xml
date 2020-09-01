@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Volunteer.
+    -->
+    <changeSet id="20200728215435-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="volunteer"
+                                 constraintName="fk_volunteer_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+        <addForeignKeyConstraint baseColumnNames="coordinator_id"
+                                 baseTableName="volunteer"
+                                 constraintName="fk_volunteer_coordinator_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="volunteer"/>
+
+    </changeSet>
+</databaseChangeLog>

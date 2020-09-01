@@ -1,0 +1,24 @@
+{
+  "opencommunityApp": {
+    "initiative": {
+      "home": {
+        "title": "Initiatives",
+        "createLabel": "Créer un nouveau Initiative",
+        "createOrEditLabel": "Créer ou éditer un Initiative",
+        "search": "Recherche pour Initiative",
+        "notFound": "Aucun Initiative trouvé"
+      },
+      "created": "Un nouveau Initiative a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Initiative avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Initiative avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Initiative {{ id }} ?"
+      },
+      "detail": {
+        "title": "Initiative"
+      },
+      "title": "Title",
+      "project": "Project"
+    }
+  }
+}

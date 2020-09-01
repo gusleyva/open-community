@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Project.
+    -->
+    <changeSet id="20200728215635-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+        <addForeignKeyConstraint baseColumnNames="photo_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_photo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="photo"/>
+
+        <addForeignKeyConstraint baseColumnNames="project_id"
+                                 baseTableName="project_initiative"
+                                 constraintName="fk_project_initiative_project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"/>
+
+        <addForeignKeyConstraint baseColumnNames="initiative_id"
+                                 baseTableName="project_initiative"
+                                 constraintName="fk_project_initiative_initiative_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="initiative"/>
+        
+        <addForeignKeyConstraint baseColumnNames="volunteer_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_volunteer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="volunteer"/>
+
+    </changeSet>
+</databaseChangeLog>

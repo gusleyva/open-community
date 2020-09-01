@@ -1,0 +1,37 @@
+{
+  "opencommunityApp": {
+    "project": {
+      "home": {
+        "title": "Projects",
+        "createLabel": "Créer un nouveau Project",
+        "createOrEditLabel": "Créer ou éditer un Project",
+        "search": "Recherche pour Project",
+        "notFound": "Aucun Project trouvé"
+      },
+      "created": "Un nouveau Project a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Project avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Project avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Project {{ id }} ?"
+      },
+      "detail": {
+        "title": "Project"
+      },
+      "projectTitle": "Project Title",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "registrationDeadLine": "Registration Dead Line",
+      "description": "Description",
+      "volunteerTask": "Volunteer Task",
+      "maxVolunteer": "Max Volunteer",
+      "minAge": "Min Age",
+      "maxGuest": "Max Guest",
+      "volunteerInstructions": "Volunteer Instructions",
+      "additionalProjectDetails": "Additional Project Details",
+      "location": "Location",
+      "photo": "Photo",
+      "initiative": "Initiative",
+      "volunteer": "Volunteer"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "opencommunityApp": {
+    "initiative": {
+      "home": {
+        "title": "Initiatives",
+        "createLabel": "Create a new Initiative",
+        "createOrEditLabel": "Create or edit a Initiative",
+        "search": "Search for Initiative",
+        "notFound": "No Initiatives found"
+      },
+      "created": "A new Initiative is created with identifier {{ param }}",
+      "updated": "A Initiative is updated with identifier {{ param }}",
+      "deleted": "A Initiative is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Initiative {{ id }}?"
+      },
+      "detail": {
+        "title": "Initiative"
+      },
+      "title": "Title",
+      "project": "Project"
+    }
+  }
+}

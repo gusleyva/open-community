@@ -1,0 +1,120 @@
+application {
+  config {
+    baseName opencommunity,
+    applicationType monolith,
+    authenticationType oauth2,
+    buildTool maven,
+    clientFramework react,
+    databaseType sql,
+    prodDatabaseType mysql,
+    devDatabaseType h2Disk,
+    packageName com.opencommunity,
+    serverPort 8081,
+    searchEngine elasticsearch 
+  }
+  entities *
+}
+
+entity Region {
+    regionName String required
+}
+
+entity Country {
+    countryName String required
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+    streetAddress String required,
+    postalCode Integer required,
+    city String required,
+    stateProvince String required
+}
+
+/**
+ * The volunteer entity.
+ */
+entity Volunteer {
+    /**
+    * The firstname attribute.
+    */
+    firstName String required,
+    lastName String required,
+    email String required,
+    phoneNumber String,
+    age Integer
+}
+/**
+ * Initiative entity.
+ * @author c4cydonia team.
+ */
+entity Initiative {
+    title String
+}
+
+entity Photo {
+    photo ImageBlob
+} 
+
+entity Project {
+    projectTitle String required minlength(3),
+    startDate Instant required,
+    endDate Instant,
+    registrationDeadLine Instant required,
+    description String,
+
+    volunteerTask String,
+    maxVolunteer Integer,
+    minAge Integer,
+    maxGuest Integer,
+    volunteerInstructions String,
+    additionalProjectDetails String
+}
+
+entity ProjectHistory {
+    startDate Instant,
+    endDate Instant,
+    language Language
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+    Country{region} to Region,
+    Location{country} to Country,
+    Volunteer{location} to Location,
+    Project{location} to Location,
+    Project{photo} to Photo,
+    ProjectHistory{project} to Project,
+    ProjectHistory{volunteer} to Volunteer
+}
+
+relationship ManyToMany {
+    Project{initiative(title)} to Initiative{project}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    Volunteer to Project{volunteer}
+}
+
+relationship ManyToOne {
+    Volunteer{coordinator} to Volunteer
+}
+
+// Set pagination options
+paginate ProjectHistory, Volunteer with infinite-scroll
+paginate Project with pagination
+
+// Use Data Transfert Objects (DTO)
+//dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Volunteer, Project
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
